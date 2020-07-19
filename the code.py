@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plot
-import numpy
+from numpy import *
 
 def plotgraphs(listxy,listfunc=None,start=-10,stop=10,title="",xlabel="",ylabel=""):
   figure,axes=plot.subplots()
-  x=numpy.linspace(start,stop)
+  x=linspace(start,stop)
   for y in listxy:
     listx=y[0]
     listy=y[1]
@@ -22,4 +22,4 @@ def plotgraphs(listxy,listfunc=None,start=-10,stop=10,title="",xlabel="",ylabel=
   axes.legend()
   plot.show()
 
-plotgraphs([],[[lambda x: x,lambda x: numpy.sin(x),"sin"],[lambda x: x,lambda x: numpy.cos(x),"cos"]],-10,2,"graph","x","y")
+plotgraphs([[[1,2,3,4],[8,7,5,4],""]],[[lambda x: x,lambda x: x**3-x,"cubic"],[lambda x: sin(x),lambda x: cos(x),"circle"]],-3.14,3.14,"graph","x","y")
