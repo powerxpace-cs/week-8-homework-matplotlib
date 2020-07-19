@@ -9,18 +9,11 @@ def plotgraphs(listxy,
                title="",
                xlabel="",
                ylabel=""):
-    # figure, axes = plt.subplots()
     x = np.linspace(start, stop)
     for item in listxy:
-        # listx = item[0]
-        # listy = item[1]
-        # label = item[2]
         plt.plot(item[0], item[1], label=item[2])
 
     for item in listfunc:
-        # listx = item[0]
-        # listy = item[1]
-        # label = item[2]
         plt.plot(item[0](x), item[1](x), label=item[2])
 
     plt.title(title)
