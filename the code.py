@@ -12,16 +12,16 @@ def plotgraphs(listxy,
     # figure, axes = plt.subplots()
     x = np.linspace(start, stop)
     for y in listxy:
-        listx = y[0]
-        listy = y[1]
-        label = y[2]
-        plt.plot(listx, listy, label=label)
+        # listx = y[0]
+        # listy = y[1]
+        # label = y[2]
+        plt.plot(y[0], y[1], label=y[2])
 
     for y in listfunc:
-        listx = y[0]
-        listy = y[1]
-        label = y[2]
-        plt.plot(listx(x), listy(x), label=label)
+        # listx = y[0]
+        # listy = y[1]
+        # label = y[2]
+        plt.plot(y[0](x), y[1](x), label=y[2])
 
     plt.title(title)
     plt.xlabel(xlabel)
@@ -30,7 +30,7 @@ def plotgraphs(listxy,
     plt.show()
 
 
-plotgraphs([[[1, 2, 3, 4], [8, 7, 5, 4], ""]],
+plotgraphs([[[1, 2, 3, 4], [8, 7, 5, 4], "line segments"]],
            [[lambda x: x, lambda x: x**3 - x, "cubic"],
             [lambda x: np.sin(x), lambda x: np.cos(x), "circle"]], -3.14, 3.14,
            "graph", "x", "y")
