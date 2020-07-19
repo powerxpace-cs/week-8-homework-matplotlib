@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plot
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -9,25 +9,25 @@ def plotgraphs(listxy,
                title="",
                xlabel="",
                ylabel=""):
-    figure, axes = plot.subplots()
+    # figure, axes = plt.subplots()
     x = np.linspace(start, stop)
     for y in listxy:
         listx = y[0]
         listy = y[1]
         label = y[2]
-        axes.plot(listx, listy, label=label)
+        plt.plot(listx, listy, label=label)
 
     for y in listfunc:
         listx = y[0]
         listy = y[1]
         label = y[2]
-        axes.plot(listx(x), listy(x), label=label)
+        plt.plot(listx(x), listy(x), label=label)
 
-    axes.set_title(title)
-    axes.set_xlabel(xlabel)
-    axes.set_ylabel(ylabel)
-    axes.legend()
-    plot.show()
+    plt.title(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.legend()
+    plt.show()
 
 
 plotgraphs([[[1, 2, 3, 4], [8, 7, 5, 4], ""]],
